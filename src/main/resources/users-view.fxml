@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<VBox xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.biblio.controller.UsersController" spacing="8" prefWidth="900" prefHeight="600">
+    <padding>
+        <Insets topRightBottomLeft="12"/>
+    </padding>
+    <Label text="Gestion des Utilisateurs"/>
+    <TableView fx:id="tableUsers" prefHeight="380.0">
+        <columns>
+            <TableColumn fx:id="colNom" text="Nom" prefWidth="120"/>
+            <TableColumn fx:id="colPrenom" text="Prénom" prefWidth="120"/>
+            <TableColumn fx:id="colLogin" text="Nom d'utilisateur" prefWidth="160"/>
+            <TableColumn fx:id="colEmail" text="Email" prefWidth="180"/>
+            <TableColumn fx:id="colRole" text="Profil" prefWidth="140"/>
+            <TableColumn fx:id="colActif" text="Actif" prefWidth="80"/>
+        </columns>
+    </TableView>
+    <HBox spacing="8">
+        <TextField fx:id="txtNom" promptText="Nom"/>
+        <TextField fx:id="txtPrenom" promptText="Prénom"/>
+        <TextField fx:id="txtEmail" promptText="Email"/>
+        <TextField fx:id="txtLogin" promptText="Nom d'utilisateur"/>
+        <PasswordField fx:id="txtPassword" promptText="Mot de passe"/>
+        <ComboBox fx:id="cbRole" promptText="Profil" prefWidth="160"/>
+        <CheckBox fx:id="chkActif" text="Actif" selected="true"/>
+        <Button text="Ajouter" onAction="#onAdd"/>
+        <Button text="Désactiver/Activer" onAction="#onToggleActive"/>
+        <Button text="Réinitialiser MDP" onAction="#onResetPassword"/>
+    </HBox>
+</VBox>

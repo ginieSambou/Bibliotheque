@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<VBox xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.biblio.controller.BookController" spacing="8" prefWidth="800" prefHeight="600">
+    <padding>
+        <Insets topRightBottomLeft="12"/>
+    </padding>
+    <Label text="Gestion des Livres" />
+    <HBox spacing="8">
+        <ComboBox fx:id="filterCategorie" promptText="Filtrer par catégorie" prefWidth="200"/>
+        <Button text="Tous" onAction="#onResetFilter"/>
+        <TextField fx:id="txtSearchTitre" promptText="Rechercher par titre..." prefWidth="240"/>
+    </HBox>
+    <TableView fx:id="tableLivres" prefHeight="400.0">
+        <columns>
+            <TableColumn fx:id="colTitre" text="Titre" prefWidth="200"/>
+            <TableColumn fx:id="colAuteur" text="Auteur" prefWidth="200"/>
+            <TableColumn fx:id="colIsbn" text="ISBN" prefWidth="150"/>
+            <TableColumn fx:id="colAnnee" text="Année" prefWidth="100"/>
+            <TableColumn fx:id="colCategorie" text="Catégorie" prefWidth="150"/>
+            <TableColumn fx:id="colStockTotal" text="Stock Total" prefWidth="100"/>
+            <TableColumn fx:id="colDisponible" text="Disponible" prefWidth="120"/>
+        </columns>
+    </TableView>
+    <HBox spacing="8">
+        <TextField fx:id="txtTitre" promptText="Titre" />
+        <TextField fx:id="txtAuteur" promptText="Auteur" />
+        <TextField fx:id="txtIsbn" promptText="ISBN" />
+        <TextField fx:id="txtAnnee" promptText="Année" />
+        <ComboBox fx:id="comboCategorie" promptText="Catégorie" prefWidth="160"/>
+        <Button fx:id="btnAdd" text="Ajouter" onAction="#onAdd"/>
+        <Button fx:id="btnDelete" text="Supprimer" onAction="#onDelete"/>
+    </HBox>
+</VBox>

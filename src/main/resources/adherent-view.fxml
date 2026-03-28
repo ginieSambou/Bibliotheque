@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<VBox xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.biblio.controller.AdherentController" spacing="8" prefWidth="800" prefHeight="600">
+    <padding>
+        <Insets topRightBottomLeft="12"/>
+    </padding>
+    <Label text="Gestion des Adhérents"/>
+    <TableView fx:id="tableAdherents" prefHeight="400.0">
+        <columns>
+            <TableColumn fx:id="colNom" text="Nom" prefWidth="150"/>
+            <TableColumn fx:id="colPrenom" text="Prénom" prefWidth="150"/>
+            <TableColumn fx:id="colEmail" text="Email" prefWidth="250"/>
+            <TableColumn fx:id="colTelephone" text="Téléphone" prefWidth="150"/>
+        </columns>
+    </TableView>
+    <HBox spacing="8">
+        <TextField fx:id="txtNom" promptText="Nom" />
+        <TextField fx:id="txtPrenom" promptText="Prénom" />
+        <TextField fx:id="txtEmail" promptText="Email" />
+        <TextField fx:id="txtTelephone" promptText="Téléphone" />
+        <Button text="Ajouter" onAction="#onAdd"/>
+        <Button text="Modifier" onAction="#onUpdate"/>
+        <Button text="Supprimer" onAction="#onDelete"/>
+        <Button fx:id="btnToggleActive" text="Suspendre/Réactiver" onAction="#onToggleActive"/>
+    </HBox>
+    <Label text="Historique des emprunts" styleClass="text-muted"/>
+    <TableView fx:id="tableHistorique" prefHeight="240.0">
+        <columns>
+            <TableColumn fx:id="colHLivre" text="Livre" prefWidth="240"/>
+            <TableColumn fx:id="colHDateEmp" text="Date emprunt" prefWidth="140"/>
+            <TableColumn fx:id="colHDateLimite" text="Date limite" prefWidth="140"/>
+            <TableColumn fx:id="colHDateRetour" text="Retour" prefWidth="140"/>
+            <TableColumn fx:id="colHPenalite" text="Pénalité (FCFA)" prefWidth="160"/>
+            <TableColumn fx:id="colHStatut" text="Statut" prefWidth="140"/>
+        </columns>
+    </TableView>
+</VBox>

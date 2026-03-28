@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<VBox xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.biblio.controller.LoginController" spacing="12" alignment="CENTER" prefWidth="460" prefHeight="300" styleClass="card card-accent">
+    <padding>
+        <Insets topRightBottomLeft="20"/>
+    </padding>
+    <Label text="📚 Bibliothèque de Dakar" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+    <Label text="Connexion" styleClass="text-muted"/>
+    <TextField fx:id="txtUsername" promptText="Nom d'utilisateur" prefWidth="320" styleClass="rounded"/>
+    <PasswordField fx:id="txtPassword" promptText="Mot de passe" prefWidth="320" styleClass="rounded"/>
+    <Label fx:id="lblError" textFill="red" />
+    <Button text="Se connecter" onAction="#onLogin" prefWidth="160" styleClass="primary"/>
+</VBox>

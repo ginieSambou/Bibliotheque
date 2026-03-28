@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<VBox xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.biblio.controller.EmpruntController" spacing="8" prefWidth="900" prefHeight="600">
+    <padding>
+        <Insets topRightBottomLeft="12"/>
+    </padding>
+    <Label text="Gestion des Emprunts"/>
+    <HBox spacing="8">
+        <ComboBox fx:id="cbLivre" promptText="Choisir un livre" prefWidth="300"/>
+        <ComboBox fx:id="cbAdherent" promptText="Choisir un adhérent" prefWidth="300"/>
+        <DatePicker fx:id="dpDateLimite" promptText="Date limite"/>
+        <Button text="Enregistrer" onAction="#onEnregistrer"/>
+    </HBox>
+    <TableView fx:id="tableEmprunts" prefHeight="400.0">
+        <columns>
+            <TableColumn fx:id="colLivre" text="Livre" prefWidth="250"/>
+            <TableColumn fx:id="colAdherent" text="Emprunteur" prefWidth="250"/>
+            <TableColumn fx:id="colDateLimite" text="Date limite" prefWidth="150"/>
+            <TableColumn fx:id="colStatut" text="Statut" prefWidth="120"/>
+            <TableColumn fx:id="colPenalite" text="Pénalité" prefWidth="120"/>
+        </columns>
+    </TableView>
+    <HBox spacing="8">
+        <Button text="Marquer comme rendu" onAction="#onMarquerRetour"/>
+    </HBox>
+</VBox>
